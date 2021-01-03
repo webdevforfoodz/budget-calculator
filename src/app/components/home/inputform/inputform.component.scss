@@ -1,0 +1,55 @@
+@import '../../../../main-styles.scss';
+
+.form {
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    margin: auto;
+
+    input {
+        padding: 10px;
+        border-color: transparent;
+        background-color: $light-grey;
+        border-radius: 5px;
+        font-family: 'Lato', sans-serif;
+
+        &:focus {
+            background-color: darken($light-grey,10%);
+            border-color: darken($light-grey,20%);
+        }
+    }
+
+    input:nth-child(1) {
+        width: 100px;
+    }
+
+    input:nth-child(2) {
+        flex: 1;
+        margin: 0 10px;
+    }
+
+    .btn-wrapper {
+        
+        button {
+            padding: 10px;
+            background-color: $green;
+            border: none;
+            color: $light-grey;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: darken($green,5%);
+            }
+
+            &:disabled, [disabled] {
+                background-color: darken($light-grey,20%);
+                cursor: not-allowed;
+            }
+        }
+    }
+
+}

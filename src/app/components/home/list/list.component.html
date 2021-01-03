@@ -1,0 +1,18 @@
+<div class="container" >
+    <div class="income">
+        <div class="green">
+            Income
+        </div>
+        <div *ngFor="let item of items">
+            <app-card [item]="item" *ngIf="item.amount>= 0" (removedItem)="onRemoveItem(item)"></app-card>
+        </div>
+    </div>
+    <div class="expense">
+        <div class="red">
+            Expense
+        </div>
+        <div *ngFor="let item of items">
+            <app-card [item]="item" *ngIf="item.amount < 0" (removedItem)="onRemoveItem(item)"></app-card>
+        </div>
+    </div>
+</div>

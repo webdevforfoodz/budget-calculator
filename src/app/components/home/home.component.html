@@ -1,0 +1,17 @@
+<div class="header-section">
+    <span>Budget Calculator</span>
+</div>
+
+<section class="total-section">
+    <span >{{total}}</span>
+</section>
+
+<section class="form-section">
+    <app-inputform (newItem)="onNewItemAdded($event)"></app-inputform>
+</section>
+
+<hr>
+
+<section>
+    <app-list [items]="itemsList" (itemRemove)="onRemoveItem($event)"></app-list>
+</section>

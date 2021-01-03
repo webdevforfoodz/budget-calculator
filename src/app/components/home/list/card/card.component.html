@@ -1,0 +1,7 @@
+<div class="container" *ngIf="item" [ngClass]="{'green': item.amount >= 0, 'red': item.amount < 0}" >
+    <span>{{item.description}}</span>
+    <span >{{item.amount}}</span>
+    <div (click)="onRemoveItem()">
+        X
+    </div>
+</div>
