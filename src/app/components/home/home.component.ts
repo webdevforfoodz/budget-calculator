@@ -34,4 +34,10 @@ export class HomeComponent implements OnInit {
     this.calculateTotal(this.itemsList)
   }
 
+  onEditItem(items: any) {
+    let indexOfOld = this.itemsList.indexOf(items.oldItem)
+    this.itemsList[indexOfOld] = items.newItem;
+    this.calculateTotal(this.itemsList)
+  }
+
 }

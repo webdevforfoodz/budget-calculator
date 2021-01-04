@@ -9,6 +9,8 @@ import { InputformComponent } from './components/home/inputform/inputform.compon
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './components/home/list/list.component';
 import { CardComponent } from './components/home/list/card/card.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditFormDialogComponent } from './components/edit-form-dialog/edit-form-dialog.component';
 
 @NgModule({
   declarations: [
@@ -16,16 +18,20 @@ import { CardComponent } from './components/home/list/card/card.component';
     HomeComponent,
     InputformComponent,
     ListComponent,
-    CardComponent
-    
+    CardComponent,
+    EditFormDialogComponent
     ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
+  entryComponents: [
+    InputformComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

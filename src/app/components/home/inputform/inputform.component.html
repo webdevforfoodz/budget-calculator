@@ -3,7 +3,8 @@
     <input type="text" name="description" required placeholder="Description" [ngModel]="item.description">
     <div class="btn-wrapper">
         <button type="submit" [disabled]="!newItemForm.valid">
-            Add
+            <div *ngIf="!isItemExist">Add</div>
+            <div *ngIf="isItemExist">Save</div>
         </button>
     </div>
 </form>

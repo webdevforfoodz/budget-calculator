@@ -1,4 +1,5 @@
-<div class="container" *ngIf="item" [ngClass]="{'green': item.amount >= 0, 'red': item.amount < 0}" >
+<div class="container" *ngIf="item" [ngClass]="{'green': item.amount >= 0, 'red': item.amount < 0}" 
+    (click)="openDialog()">
     <span>{{item.description}}</span>
     <span >{{item.amount}}</span>
     <div (click)="onRemoveItem()">

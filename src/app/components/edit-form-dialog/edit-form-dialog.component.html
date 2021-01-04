@@ -1,0 +1,7 @@
+<div class="container">
+    <h1>Edit: {{item.description}}</h1>
+    <app-inputform [item]="item" (newItem)="onSubmit($event)"></app-inputform>
+    <button (click)="onClick()">
+        X
+    </button>
+</div>

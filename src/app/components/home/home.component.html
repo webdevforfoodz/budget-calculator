@@ -13,5 +13,5 @@
 <hr>
 
 <section>
-    <app-list [items]="itemsList" (itemRemove)="onRemoveItem($event)"></app-list>
+    <app-list [items]="itemsList" (itemRemove)="onRemoveItem($event)" (itemEdit)="onEditItem($event)"></app-list>
 </section>

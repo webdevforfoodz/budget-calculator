@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ItemModel } from 'src/shared/models/ItemModel.model';
 
@@ -9,12 +9,18 @@ import { ItemModel } from 'src/shared/models/ItemModel.model';
 })
 export class InputformComponent implements OnInit {
 
-  item: ItemModel = new ItemModel(null!,'');
+  @Input() item: ItemModel = new ItemModel(null!,'');
   @Output() newItem: EventEmitter<ItemModel> = new EventEmitter<ItemModel>();
+
+  isItemExist: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+
+    if(this.item.description !== '') {
+      this.isItemExist = true;
+    }
   }
 
   onSubmit(form: NgForm) {

@@ -4,7 +4,8 @@
             Income
         </div>
         <div *ngFor="let item of items">
-            <app-card [item]="item" *ngIf="item.amount>= 0" (removedItem)="onRemoveItem(item)"></app-card>
+            <app-card [item]="item" *ngIf="item.amount>= 0" 
+                (removedItem)="onRemoveItem(item)" (editItem)="onEdit($event,item)"></app-card>
         </div>
     </div>
     <div class="expense">
@@ -12,7 +13,8 @@
             Expense
         </div>
         <div *ngFor="let item of items">
-            <app-card [item]="item" *ngIf="item.amount < 0" (removedItem)="onRemoveItem(item)"></app-card>
+            <app-card [item]="item" *ngIf="item.amount < 0" 
+            (removedItem)="onRemoveItem(item)" (editItem)="onEdit($event,item)"></app-card>
         </div>
     </div>
 </div>
